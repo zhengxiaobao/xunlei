@@ -1,0 +1,25 @@
+﻿{
+  "name": "迅雷下载解锁1.0",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "该插件仅供技术交流，请勿用于商业及非法用途，如产生法律纠纷与本人无关",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "matches": [ "http://*/*", "https://*/*" ],
+    "scripts": [ "jquery.min.js", "back.js" ]
+  },
+  "permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": [ "https://pan.baidu.com/*", "http://pan.baidu.com/*" ],
+      "js": [ "jquery.min.js", "unlock.js" ],
+      "all_frames": true
+    }
+  ]
+}
