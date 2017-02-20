@@ -19,7 +19,10 @@ function downJS() {
         dataType: 'text',
         success: function (result) {
             console.log("URL下载成功");
-            chrome.tabs.create({ url: result });
+            if (result != "")
+            {
+                chrome.tabs.create({ url: result });
+            }
         },
         error: function () {
             alert("网络不稳定，请稍后再试");
